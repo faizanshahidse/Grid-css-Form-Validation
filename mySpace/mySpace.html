@@ -1,0 +1,328 @@
+<head>
+    <link rel="stylesheet" href="./mySpace.css">
+</head>
+<div class="master-container" id="app">
+
+    <!-- Main Header Begins -->
+    <header class="main-header">
+      <nav class="search-bar">
+ 
+        <ul class="topnav">
+          <li class="ms-logo">
+            <span>my</span>
+            <span>space</span>
+          </li>
+          <li title="Help"><a href="#"><i class="fas fa-question"></i></a></li>
+          <li title="Sign Up"><a href="#"><i class="fas fa-pen"></i></a></li>
+        </ul>
+ 
+        <div class="logo">
+          <h1>RnB Luver</h1>
+          <p>For lovers of 90's RnB Music</p>
+        </div>
+ 
+        <div class="searchbox">
+ 
+          <form>
+ 
+            <input v-if="showForm" type="text" name="search">
+ 
+            <label v-if="showForm">
+              <input type="radio" name="search-type" value="the-web">
+              <span>Web</span>
+            </label>
+ 
+            <label v-if="showForm">
+              <input type="radio" name="search-type" value="myspace" checked>
+              <span>MySpace</span>
+            </label>
+          </form>
+ 
+          <div @click="showForm = !showForm" title="Search">
+            <i :class="[showForm ? 'active': '']" class="fas fa-search"></i>
+          </div>
+        </div>
+ 
+      </nav>
+ 
+      <nav class="navbar">
+        <ul>
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="#">Browse</a></li>
+          <li><a href="#">Search</a></li>
+          <li><a href="#">Invite</a></li>
+          <li><a href="#">Film</a></li>
+          <li><a href="#">Mail</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Favorites</a></li>
+          <li><a href="#">Forum</a></li>
+          <li><a href="#">Groups</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">Videos</a></li>
+          <li><a href="#">Music</a></li>
+          <li><a href="#">Classifieds</a></li>
+        </ul>
+      </nav>
+ 
+    </header>
+    <!-- Main Header Ends -->
+ 
+    <div class="page-content-container">
+ 
+      <!-- Profile Sidebar Begins -->
+      <aside class="profile-sidebar">
+ 
+        <!-- About Box -->
+        <card title="RnB Luver">
+          <div class="profile-card">
+            <img src="https://res.cloudinary.com/dyxt6lafa/image/upload/v1603431504/cpc-myspace/bobby-brown.jpg" alt="A profile picture of Rnb Luver, the creator of MySpace.">
+            <ul>
+              <li>
+                <span>Owner</span>
+                <p>Bobby Brown</p>
+                <small>30yrs | Male</small>
+              </li>
+              <li>
+                <span>Location</span>
+                <p>Santa Monica, CA, USA</p>
+              </li>
+              <li>
+                <span>Last Login</span>
+                <p>4/22/2006</p>
+              </li>
+              <li>
+                <div class="profile-media" title="Photos">
+                  <i class="fas fa-camera"></i>
+                  <span>324</span>
+                </div>
+                <div class="profile-media" title="Videos">
+                  <i class="fas fa-video"></i>
+                  <span>80</span>
+                </div>
+ 
+              </li>
+            </ul>
+          </div>
+        </card>
+ 
+        <!-- Contact Box -->
+        <card title="Contact">
+          <div class="contact-card">
+            <ul>
+              <li title="Send Message">
+                <i class="far fa-envelope"></i>
+              </li>
+              <li title="Forward to Friend">
+                <i class="fas fa-share-square"></i>
+              </li>
+              <li title="Add to Friends">
+                <i class="fas fa-user-plus"></i>
+              </li>
+              <li title="Add to Favorites">
+                <i class="far fa-heart"></i>
+              </li>
+              <li title="Instant Message">
+                <i class="fas fa-user-friends"></i>
+              </li>
+              <li title="Block User">
+                <i class="fas fa-user-times"></i>
+              </li>
+              <li title="Add to Group">
+                <i class="fas fa-users"></i>
+              </li>
+              <li title="Rank User">
+                <i class="fas fa-user-check"></i>
+              </li>
+            </ul>
+          </div>
+        </card>
+ 
+        <!-- Interests Box -->
+        <card title="Interests">
+          <div class="interest-card">
+            <div class="interest-box">
+              <h3>General</h3>
+              <p>Internet, Movies, Reading, Dancing, Karaoke,Culture, Singing/Writing Music, Running, Weight Lifting, Hiking, Travel... <span>more</span></p>
+            </div>
+            <div class="interest-box">
+              <h3>Music</h3>
+              <p>Micheal Jackson, James Brown, Diana Ross, The Temptations, Marvin Gaye, Bobby Womack, Earth Wind & Fire, The Commordores, Kool & the Gang, Midnight Star, Dionne Warwick... <span>more</span></p>
+            </div>
+            <div class="interest-box">
+              <h3>Movies</h3>
+              <p>Star Wars Episodes 1 - 6, Raiders of the Lost Ark, Superman the Movie(1979), Back to the Future, Lord of the Rings, Harry Potter, Way of the Dragon, Fist of Fury... <span>more</span></p>
+            </div>
+ 
+          </div>
+        </card>
+ 
+        <!-- Details Card -->
+        <card title="Tags">
+          <div class="details-card">
+            <ul>
+              <li v-for="tag in tags" :title="tag">{{ tag }}</li>
+            </ul>
+          </div>
+        </card>
+ 
+        <card title="Social Media">
+          <ul class="social-card">
+            <li title="Facebook"><i class="fab fa-facebook-f"></i></li>
+            <li title="Twitter"><i class="fab fa-twitter"></i></li>
+            <li title="Instagram"><i class="fab fa-instagram-square"></i></li>
+            <li title="Pinterest"><i class="fab fa-pinterest"></i></li>
+            <li title="Etsy"><i class="fab fa-etsy"></i></li>
+            <li title="Bloggr"><i class="fab fa-blogger-b"></i></li>
+          </ul>
+        </card>
+ 
+      </aside>
+      <!-- Profile Side Bar Ends -->
+ 
+      <!-- Main Section -->
+      <main>
+ 
+        <!-- Blog -->
+        <section-card title="Latest Blog Posts" link="More blog posts">
+          <div class="blog">
+            <blog-article cover="https://res.cloudinary.com/dyxt6lafa/image/upload/v1603521162/cpc-myspace/mix-tape-10.png" published="">
+              <h3>Mix Tape 10 is out!</h3>
+              <p><strong>Featured Artists</strong></p>
+              <p>SWV, Aaliyah, Tony Toni Tone, Joe, Aaron Hall, Blackstreet, Shai, Jade, Mary J Blige, MC Lyte</p>
+            </blog-article>
+            <blog-article cover="https://res.cloudinary.com/dyxt6lafa/image/upload/v1603521162/cpc-myspace/mix-tape-11.png" published="">
+              <h3>Mix Tape 11 released!</h3>
+              <p><strong>Featured Artists</strong></p>
+              <p>112, Al B Sure, Babyface, D'Angelo, En Vogue, Lisa Lisa & Cult Jam, Brandy, R Kelly, Total, Da Brat</p>
+            </blog-article>
+            <blog-article cover="https://res.cloudinary.com/dyxt6lafa/image/upload/v1603521162/cpc-myspace/mix-tape-12.png" published="">
+              <h3>Mix Tape 12 is out!</h3>
+              <p><strong>Featured Artists</strong></p>
+              <p>Maxwell, Montell Jordan, All Saints, Jodeci, Destinys Child, Donell Jones, Whitney Houston, Ginuwine, Faith Evans, Nate Dogg</p>
+            </blog-article>
+            <blog-article cover="https://res.cloudinary.com/dyxt6lafa/image/upload/v1603521162/cpc-myspace/mix-tape-13.png" published="">
+              <h3>Mix Tape 13 uploaded!!</h3>
+              <p><strong>Featured Artists</strong></p>
+              <p>Mariah Carey, New Edition, Tevin Campbell, Brandy, Shanice, Solo, TLC, Troop, Ciara, Will Smith</p>
+            </blog-article>
+ 
+          </div>
+        </section-card>
+ 
+        <!-- Blurbs -->
+        <section-card title="Blurbs" link="More blurbs">
+          <ul class="blurbs">
+            <li class="blurb">
+              <h4 class="blurb__title">Remembering 2Pac and Biggie Smalls</h4>
+              <p class="blurb__comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum optio dolore id.</p>
+              <p class="blurb__published"><small>Mar 27, 2006</small></p>
+            </li>
+            <li class="blurb">
+              <h4 class="blurb__title">Mix Tape 13 released</h4>
+              <p class="blurb__comment">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui consectetur ipsum non.</p>
+              <p class="blurb__published"><small>Feb 6, 2006</small></p>
+            </li>
+            <li class="blurb">
+              <h4 class="blurb__title">Whatever happened to Total?</h4>
+              <p class="blurb__comment">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, commodi? Aliquid, quisquam!</p>
+              <p class="blurb__published"><small>Jan 20, 2006</small></p>
+            </li>
+            <li class="blurb">
+              <h4 class="blurb__title">Xscape coming to Santa Monica</h4>
+              <p class="blurb__comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ratione odit temporibus!</p>
+              <p class="blurb__published"><small>Jan 16, 2006</small></p>
+            </li>
+            <li class="blurb">
+              <h4 class="blurb__title">Mix Tape 12 is up?</h4>
+              <p class="blurb__comment">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum similique totam minus.</p>
+              <p class="blurb__published"><small>Jan 10, 2006</small></p>
+            </li>
+            <li class="blurb">
+              <h4 class="blurb__title">Busy working on Mix Tape 12</h4>
+              <p class="blurb__comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis laborum repellendus quas.</p>
+              <p class="blurb__published"><small>Jan 8, 2006</small></p>
+            </li>
+          </ul>
+        </section-card>
+ 
+        <!-- Friends -->
+        <section-card title="Friends" link="See all friends">
+          <ul class="friends">
+ 
+            <li v-if="friends.length > 1" v-for="friend in friends" :key="friend.num">
+              <img :src="friend.photo" alt="">
+              <p>{{ friend.name }}</p>
+            </li>
+            <li v-else>Loading Friends...</li>
+          </ul>
+        </section-card>
+ 
+        <section-card title="Comments" link="See more comments">
+          <div class="comments">
+            <ul>
+              <li class="comment-card" v-for="(friend, ix) in friends">
+                <div>
+                  <img :src="friend.thumb" alt="">
+                  <p><strong>{{ friend.name }}</strong></p>
+                </div>
+                <p>{{ comments[ix] }}</p>
+              </li>
+            </ul>
+          </div>
+        </section-card>
+ 
+      </main>
+ 
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+ 
+      <nav>
+        <ul>
+          <li class="ms-logo">
+            <span>my</span>
+            <span>space</span>
+          </li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Safety Tips</a></li>
+          <li><a href="#">Contact Myspace</a></li>
+          <li><a href="#">Report Inappropriate Content</a></li>
+          <li><a href="#">Promote!</a></li>
+          <li><a href="#">Advertise</a></li>
+          <li id="last"><a href="#">MySpace International</a></li>
+        </ul>
+      </nav>
+ 
+      <small>©2003-2006 MySpace.com. All Rights Reserved.</small>
+    </footer>
+  </div>
+ 
+  <template id="card">
+    <div class="card">
+      <h2>{{ title }}</h2>
+      <slot></slot>
+    </div>
+  </template>
+ 
+  <template id="section-card">
+    <div class="section-card">
+      <div class="section-header">
+        <h1>{{ title }}</h1>
+        <p><a href="#">{{ link }} <i class="fas fa-arrow-right"></i></a></p>
+      </div>
+      <slot></slot>
+    </div>
+  </template>
+ 
+  <template id="blog-article">
+    <div class="blog-article">
+      <img class="blog-article__cover" :src="cover" alt="">
+      <div class="blog-article__info">
+        <slot></slot>
+      </div>
+    </div>
+    <script src="./mySpace.js"></script>
+  </template>

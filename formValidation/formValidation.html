@@ -1,0 +1,105 @@
+<html>
+<head>
+    <link rel="stylesheet" href="./formValidation.css">
+</head>
+<main>
+    <h1>Form validation</h1>
+    <form action="" class="form" id="form">
+      <!-- ======= User ======= -->
+      <div class="form-group" id="group-user">
+        <label for="user" class="form-label">User *</label>
+        <div class="form-group-input">
+          <input type="text" class="form-input" name="user" id="user" placeholder="Enter user" />
+          <i class="form-validation-status fas fa-times-circle"></i>
+        </div>
+        <p class="form-input-error">
+          User has to be from 4 to 16 digits and can only contain numbers,
+          letters, dashes and underscores.
+        </p>
+      </div>
+  
+      <!-- ======= Name ======= -->
+      <div class="form-group" id="group-name">
+        <label for="name" class="form-label">Name *</label>
+        <div class="form-group-input">
+          <input type="text" class="form-input" name="name" id="name" placeholder="Enter name" />
+          <i class="form-validation-status fas fa-times-circle"></i>
+        </div>
+        <p class="form-input-error">
+          Name has to be from 1 to 40 digits and can only contain letters
+          (accents allowed) and white spaces.
+        </p>
+      </div>
+  
+      <!-- ======= Password ======= -->
+      <div class="form-group" id="group-password">
+        <label for="password" class="form-label">Password *</label>
+        <div class="form-group-input">
+          <input type="password" class="form-input" name="password" id="password" placeholder="Enter password" />
+          <i class="form-validation-status fas fa-times-circle"></i>
+        </div>
+        <p class="form-input-error">
+          Password has to be from 4 to 12 digits.
+        </p>
+      </div>
+  
+      <!-- ======= Password 2 ======= -->
+      <div class="form-group" id="group-password2">
+        <label for="password2" class="form-label">Repeat password *</label>
+        <div class="form-group-input">
+          <input type="password" class="form-input" name="password2" id="password2" placeholder="Enter password again" />
+          <i class="form-validation-status fas fa-times-circle"></i>
+        </div>
+        <p class="form-input-error">Both passwords must be the same.</p>
+      </div>
+  
+      <!-- ======= Email ======= -->
+      <div class="form-group" id="group-email">
+        <label for="email" class="form-label">Email *</label>
+        <div class="form-group-input">
+          <input type="email" class="form-input" name="email" id="email" placeholder="Enter email address" />
+          <i class="form-validation-status fas fa-times-circle"></i>
+        </div>
+        <p class="form-input-error">
+          Email has to be from 1 to 40 digits and can only contain letters
+          numbers, dots, dashes and underscores.
+        </p>
+      </div>
+  
+      <!-- ======= Phone ======= -->
+      <div class="form-group" id="group-phone">
+        <label for="phone" class="form-label">Phone *</label>
+        <div class="form-group-input">
+          <input type="text" class="form-input" name="phone" id="phone" placeholder="Enter phone number" />
+          <i class="form-validation-status fas fa-times-circle"></i>
+        </div>
+        <p class="form-input-error">Phone has to be from 7 to 14 numbers.</p>
+      </div>
+  
+      <!-- ======= Terms and conditions ======= -->
+      <div class="form-group" id="group-terms">
+        <label class="form-label">
+          <input class="form-checkbox" type="checkbox" name="terms" id="terms" />
+          I agree to the terms and conditions.
+        </label>
+      </div>
+  
+      <!-- ======= Error message ======= -->
+      <div class="form-message" id="form-message">
+        <p>
+          <i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Please
+          fill the form properly.
+        </p>
+      </div>
+  
+      <!-- ======= Send ======= -->
+      <div class="form-group form-group-btn-send">
+        <button type="submit" class="form-btn">Send</button>
+        <p class="form-message-success" id="form-message-success">
+          Sent successfully
+        </p>
+      </div>
+    </form>
+  </main>
+  <script src="./formValidation.js"></script>
+  </html>

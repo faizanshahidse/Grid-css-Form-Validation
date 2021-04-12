@@ -1,0 +1,194 @@
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+:root {
+  --bg-color: #ddd;
+
+  --input-bg: #fff;
+  --input-focus-border: #0075ff;
+  --input-focus-shadow: rgba(163, 163, 163, 0.4);
+
+  --error-message-bg: #f66060;
+
+  --send-btn-bg: #000;
+  --send-btn-color: #fff;
+
+  --success: #119200;
+  --error: #bb2929;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background: var(--bg-color);
+}
+
+main {
+  max-width: 800px;
+  width: 90%;
+  margin: auto;
+  padding: 40px;
+}
+
+h1 {
+  text-align: center;
+  margin: 0 0 50px 0;
+}
+
+/*--------------------------------------------------------------
+  # Form
+  --------------------------------------------------------------*/
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-label {
+  display: block;
+  font-weight: 700;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.form-group-input {
+  position: relative;
+}
+
+.form-input {
+  width: 100%;
+  background: var(--input-bg);
+  border: 3px solid transparent;
+  border-radius: 3px;
+  height: 45px;
+  line-height: 45px;
+  padding: 0 40px 0 10px;
+  transition: 0.3s ease all;
+}
+
+.form-input:focus {
+  border: 3px solid var(--input-focus-border);
+  outline: none;
+  box-shadow: 3px 0px 30px var(--input-focus-shadow);
+}
+
+.form-input-error {
+  font-size: 12px;
+  margin-bottom: 0;
+  display: none;
+}
+
+.form-input-error-active {
+  display: block;
+}
+
+.form-validation-status {
+  position: absolute;
+  right: 10px;
+  bottom: 15px;
+  z-index: 100;
+  font-size: 16px;
+  opacity: 0;
+}
+
+.form-checkbox {
+  margin-right: 10px;
+}
+
+.form-group-terms,
+.form-message,
+.form-group-btn-send {
+  grid-column: span 2;
+}
+
+.form-message {
+  height: 45px;
+  line-height: 45px;
+  background: var(--error-message-bg);
+  padding: 0 15px;
+  border-radius: 3px;
+  display: none;
+}
+
+.form-message-active {
+  display: block;
+}
+
+.form-message p {
+  margin: 0;
+}
+
+.form-group-btn-send {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-btn {
+  height: 45px;
+  line-height: 45px;
+  width: 30%;
+  background: var(--send-btn-bg);
+  color: var(--send-btn-color);
+  font-weight: bold;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.1s ease all;
+}
+
+.form-btn:hover {
+  box-shadow: 3px 0px 30px rgba(163, 163, 163, 1);
+}
+
+.form-message-success {
+  font-size: 14px;
+  color: var(--success);
+  display: none;
+}
+
+.form-message-success-active {
+  display: block;
+}
+
+@media screen and (max-width: 800px) {
+  .form {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group-terms,
+  .form-message,
+  .form-group-btn-send {
+    grid-column: 1;
+  }
+
+  .form-btn {
+    width: 100%;
+  }
+}
+
+/*--------------------------------------------------------------
+  # Form validation
+  --------------------------------------------------------------*/
+.form-group-success .form-validation-status {
+  color: var(--success);
+  opacity: 1;
+}
+
+.form-group-error .form-label {
+  color: var(--error);
+}
+
+.form-group-error .form-validation-status {
+  color: var(--error);
+  opacity: 1;
+}
+
+.form-group-error .form-input {
+  border: 3px solid var(--error);
+}
